@@ -1,8 +1,7 @@
 button {
-    color: rgb(0, 0, 0);
+    color: #fff;
     background-color: #009688;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
     cursor: pointer;
     padding: 3%;
     border: none;
@@ -20,32 +19,13 @@ button:focus {
     background-color: #024d45;
 }
 
-#beginner-btn{
-    background-color: #00e1ff;
-}
-
-#easy-btn{
-    background-color: #00ff4c;
-}
-
-#normal-btn{
-    background-color: #fbff00;
-}
-
-#hard-btn{
-    background-color: #ff9100;
-}
-
-#extreme-btn{
-    background-color: #ff0000;
+#input:focus {
+    outline:none;
 }
 
 #solve-btn{
-    background-color: white;
+    background-color: #42f4e5;
     margin-left:50px;
-    border-radius: 50%;
-    color: black;
-    border: 2px solid rgb(0, 0, 0);
 }
 
 .max-550 {
@@ -77,42 +57,33 @@ button:focus {
     padding: .5%;
 }
 
-.fixed6 {
-    background-color: #ffffff;
+.empty {
+    background-color: #d9ff42;
+    cursor: context-menu;
     border-radius: 25%;
     padding: 30%;
 }
 
-.fixed0 {
-    background-color: #00e1ff44;
+.fixed {
+    background-color: #80cbc4;
+    cursor: context-menu;
     border-radius: 25%;
     padding: 30%;
 }
 
-.fixed1 {
-    background-color: #00ff4c3d;
+.wrong {
+    background-color: #f44250;
+    cursor: context-menu;
     border-radius: 25%;
     padding: 30%;
 }
 
-.fixed2 {
-    background-color: #fbff004f;
+.right {
+    background-color: #80cbc4;
+    cursor: context-menu;
     border-radius: 25%;
     padding: 30%;
 }
-
-.fixed3 {
-    background-color: #ff91003f;
-    border-radius: 25%;
-    padding: 30%;
-}
-
-.fixed4 {
-    background-color: #ff000046;
-    border-radius: 25%;
-    padding: 30%;
-}
-
 
 .border-right {
     border-right: 2px solid;

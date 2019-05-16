@@ -1,9 +1,9 @@
-console.log(document.getElementsByClassName("max-550"))
-console.log($(".max-550"))
+
+var problemBoard 
 
 function generateBoard(difficulty) {
     
-    let board = [
+    problemBoard = [
         [2, 8, 6, 7, 5, 4, 9, 3, 1],
         [9, 3, 1, 2, 8, 6, 7, 5, 4],
         [7, 5, 4, 9, 1, 3, 8, 6, 2],
@@ -18,69 +18,109 @@ function generateBoard(difficulty) {
     for (let r = 0; r < random10; r++) {
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
-                board[i][j] = board[i][j] + 1;
-                if (board[i][j] == 10) {
-                    board[i][j] = 1;
+                problemBoard[i][j] = problemBoard[i][j] + 1;
+                if (problemBoard[i][j] == 10) {
+                    problemBoard[i][j] = 1;
                 }
             }
         }
     }
     let min = difficulty;
     let max = min + 2;
-    board.forEach((row) => {
+    problemBoard.forEach((row) => {
         let toReplace = shuffleArray([0, 1, 2, 3, 4, 5, 6, 7, 8]);
         for (let i = 0; i < Math.floor(Math.random() * (max - min + 1) + min); i++) {
             row[toReplace[i]] = 0;
         }
     });
-    renderBoard(board,difficulty);
+    renderBoard(problemBoard);
     
-    $.post("/problem_submission", {"javascript_data" : JSON.stringify(board)})
+    $.post("/problem_submission", {"javascript_data" : JSON.stringify(problemBoard)})
   
 }
 
 function generateSolution(){
+
     $.get("/solution_request", function(d){
+
         var JSONObject = JSON.parse(d);
         var solution = JSONObject.solution
+        var correctnessTable = [
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false],
+        [false,false,false,false,false,false,false,false,false]
+        ]
+        
         console.log("solution " + solution)
-        renderBoard(solution,6)
+
+        for (let i = 0; i < 9; i++){
+            for (let j = 0; j < 9; j++){
+                el = document.getElementById(i + " " + j)
+                n = el.getElementsByClassName("num")[0]
+                
+                if (n.innerHTML === solution[i][j].toString()){
+                    correctnessTable[i][j]=true
+                }
+                else{
+                    correctnessTable[i][j]=false
+                }
+            }
+        }
+
+        renderBoard(solution, correctnessTable)
 
    })}
 
 
-function renderBoard(boardToRender,difficulty) {
+function renderBoard(boardToRender, correctnessTable) {
 
     let board = boardToRender;
     let html = '';
     for (let i = 0; i < 9; i++) {
         html += "<div class='row' >";
         for (let j = 0; j < 9; j++) {
+
+            // if (i == 2 && j == 2) {
+            //     html += "            <div class='box border-right border-bottom '  >";
+            // } else if (j == 2 || j == 5) {
+            //     html += "            <div class='box border-right'  >";
+
             if ((i == 2 && j == 2) || (i == 2 && j == 5) || (i == 5 && j == 2) || (i == 5 && j == 5)) {
-                html += "            <div class='box border-right border-bottom '  >";
+                html += "            <div class='box border-right border-bottom ' id = '" + i + " " + j  + "'>";
             } else if (i == 2 || i == 5) {
-                html += "            <div class='box border-bottom'  >";
+                html += "            <div class='box border-bottom'  id = '" + i + " " + j  + "'>";
             } else if (j == 2 || j == 5) {
-                html += "            <div class='box  border-right'  >";
+                html += "            <div class='box border-right'  id = '" + i + " " + j  + "'>";
             } else {
-                html += "            <div class='box'  >";
+                html += "            <div class='box'  id = '" + i + " " + j  + "'>";
             }
 
-            if (board[i][j] == 0) 
-            {
-                html += "                <div >"
+            if (correctnessTable === undefined){
+                if (board[i][j] == 0) {
+                    html += "                <div class = 'empty'>"
+                } else {
+                    html += "                <div class='fixed'  >"
+                }
             }
-            else 
-            {
-                classname = "fixed"+difficulty;
-                html += "                <div class="+classname+"  >"
+            else{
+                 if (correctnessTable[i][j] == false) {
+                    html += "                <div class = 'wrong'>"
+                } else {
+                    html += "                <div class='right'  >"
+                }
             }
 
             if (board[i][j] == 0){
-                html += "                    <div>" + '' + "</div>"
+                html += "                    <div class = 'num' id = 'input' contenteditable>" + '' + "</div>"
             }
             else{
-                html += "                    <div>" + board[i][j] + "</div>"
+                html += "                    <div class = 'num'>" + board[i][j] + "</div>"
             }
             html += "                </div>"
             html += "            </div>"
