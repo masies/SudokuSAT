@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, url_for
 
-import random, json, os, sys, getopt, time, pycosat, itertools
+import random, json, os, sys, getopt, time, pycosat, itertools, subprocess
 
-sol = []
+sol_to_send = []
 base_scale = [1,2,3,4,5,6,7,8,9]
 
 app = Flask(__name__, static_folder = os.path.abspath(os.path.dirname(sys.argv[0])))
@@ -13,22 +13,21 @@ def init():
 
 @app.route('/problem_submission', methods = ['POST'])
 def get_problem_instance():
-	global sol
+	global sol_to_send
 	jsdata = request.form["javascript_data"]
 	data = json.loads(jsdata)
-	sol = solve_problem(data)
+	sol_to_send = solve_problem(data)
 	return jsdata
 
 @app.route('/solution_request')
 def send_problem_solution():
     json_helper = {}
-    json_helper['solution'] = sol
+    json_helper['solution'] = sol_to_send
     json_object = json.dumps(json_helper)
     return json_object
 
-
 def solve_problem(problemset):
-    solve(problemset) 
+    solve(problemset)
     return problemset 
     
 def generate_clause(row, col, digit): 
@@ -113,7 +112,9 @@ def solve(grid):
                 clauses.append([generate_clause(row, col, grid[row - 1][col - 1])])
     
     # run the sat solver
-    sol = set(pycosat.solve(clauses))
+
+    #sol = set(pycosat.solve(clauses))
+    
     
     # TODO :: here we can call the minisat solver http://minisat.se/
     # basically his format is 
@@ -131,11 +132,43 @@ def solve(grid):
     # basically we just need to generate a file writing all our clauses plus the first line and we are done
 
 
+
+    #########
+    with open('./minisat-2.2.0/core/cnf_file', 'w') as the_file:
+        the_file.write('p cnf 0 0\n')
+        for c in clauses:
+            lc = len(c)
+            for i in range (0, lc):
+                s = str(c[i]) + " "
+                the_file.write(str(s))
+            the_file.write("0\n")
+    
+    sdir = os.path.abspath(os.path.dirname(sys.argv[0])) + "/minisat-2.2.0/core"
+    subprocess.call(["./minisat cnf_file out",], shell=True, cwd=sdir)
+
+    with open ('./minisat-2.2.0/core/out', "r") as myfile:
+        out = myfile.read().replace('\n', '').replace("SAT", '')
+        c = ""
+        sol_list = []
+        for i in range (0, len(out)):
+            if out[i]==" ":
+                sol_list.append(int(c))
+                c = ""
+            else:
+                c = c + out[i]
+        sol_list.append(int(c))
+        #print("sol2 " + str(sol_list))
+        sol = set(sol_list)
+       
+        #print(sol2)
+    #########
+      
+
     # update the board
     for row in base_scale:
         for col in base_scale:
             for digit in base_scale:
-                if generate_clause(row, col, digit) in sol:
+                if generate_clause(row, col, digit) in sol: 
                     grid[row - 1][col - 1] = digit
             
     
