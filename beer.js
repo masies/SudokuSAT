@@ -33,7 +33,7 @@ function generateBoard(difficulty) {
             row[toReplace[i]] = 0;
         }
     });
-    renderBoard(problemBoard);
+    renderBoard(difficulty,problemBoard);
     
     $.post("/problem_submission", {"javascript_data" : JSON.stringify(problemBoard)})
   
@@ -73,13 +73,13 @@ function generateSolution(){
             }
         }
 
-        renderBoard(solution, correctnessTable)
+
+        renderBoard(undefined, solution, correctnessTable)
 
    })}
 
 
-function renderBoard(boardToRender, correctnessTable) {
-
+function renderBoard(difficulty, boardToRender, correctnessTable) {
     let board = boardToRender;
     let html = '';
     for (let i = 0; i < 9; i++) {
@@ -105,7 +105,9 @@ function renderBoard(boardToRender, correctnessTable) {
                 if (board[i][j] == 0) {
                     html += "                <div class = 'empty'>"
                 } else {
-                    html += "                <div class='fixed'  >"
+                    // html += "                <div class='fixed'  >"
+                    classname = "fixed"+difficulty;
+                    html += "                <div class="+classname+"  >"
                 }
             }
             else{

@@ -23,9 +23,36 @@ button:focus {
     outline:none;
 }
 
+#beginner-btn{
+    background-color: #00e1ff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#easy-btn{
+    background-color: #00ff4c;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#normal-btn{
+    background-color: #fbff00;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#hard-btn{
+    background-color: #ff9100;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#extreme-btn{
+    background-color: #ff0000;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 #solve-btn{
-    background-color: #42f4e5;
+    background-color: white;
     margin-left:50px;
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .max-550 {
@@ -58,29 +85,65 @@ button:focus {
 }
 
 .empty {
-    background-color: #d9ff42;
-    cursor: context-menu;
+    background-color: #ffffff;
+    cursor: default;
     border-radius: 25%;
     padding: 30%;
 }
 
+.empty:hover
+{
+    cursor: text;
+}
+
 .fixed {
     background-color: #80cbc4;
-    cursor: context-menu;
+    cursor: default;
+    border-radius: 25%;
+    padding: 30%;
+}
+
+.fixed0 {
+    background-color: #00e1ff44;
+    border-radius: 25%;
+    padding: 30%;
+}
+
+.fixed1 {
+    background-color: #00ff4c3d;
+    border-radius: 25%;
+    padding: 30%;
+}
+
+.fixed2 {
+    background-color: #fbff004f;
+    border-radius: 25%;
+    padding: 30%;
+}
+
+.fixed3 {
+    background-color: #ff91003f;
+    border-radius: 25%;
+    padding: 30%;
+}
+
+.fixed4 {
+    background-color: #ff000046;
     border-radius: 25%;
     padding: 30%;
 }
 
 .wrong {
-    background-color: #f44250;
-    cursor: context-menu;
+    background-color: #ffffff59;
+    cursor: default;
+    color: red;
     border-radius: 25%;
     padding: 30%;
 }
 
 .right {
-    background-color: #80cbc4;
-    cursor: context-menu;
+    background-color: #ffffff28;
+    cursor: default;
     border-radius: 25%;
     padding: 30%;
 }
