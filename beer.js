@@ -1,8 +1,8 @@
 
-var problemBoard 
+var problemBoard
 
 function generateBoard(difficulty) {
-    
+
     problemBoard = [
         [2, 8, 6, 7, 5, 4, 9, 3, 1],
         [9, 3, 1, 2, 8, 6, 7, 5, 4],
@@ -34,9 +34,9 @@ function generateBoard(difficulty) {
         }
     });
     renderBoard(difficulty,problemBoard);
-    
+
     $.post("/problem_submission", {"javascript_data" : JSON.stringify(problemBoard)})
-  
+
 }
 
 function generateSolution(){
@@ -56,14 +56,14 @@ function generateSolution(){
         [false,false,false,false,false,false,false,false,false],
         [false,false,false,false,false,false,false,false,false]
         ]
-        
+
         console.log("solution " + solution)
 
         for (let i = 0; i < 9; i++){
             for (let j = 0; j < 9; j++){
                 el = document.getElementById(i + " " + j)
                 n = el.getElementsByClassName("num")[0]
-                
+
                 if (n.innerHTML === solution[i][j].toString()){
                     correctnessTable[i][j]=true
                 }

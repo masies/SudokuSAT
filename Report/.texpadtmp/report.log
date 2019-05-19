@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.18)  19 MAY 2019 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.18)  19 MAY 2019 19:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -34,9 +34,9 @@ Package tocbasic Info: omitting babel extension for `lof'
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `lot' on input line 124.
-Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input line 1942.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2015/05/06 v3.17a KOMA-Script font size class option (12pt)
+Class scrartcl Info: File `size14.clo' used to setup font sizes on input line 1942.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/extsizes/size14.clo
+File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2015/05/06 v3.17a KOMA-Script package (type area)
 
@@ -50,22 +50,28 @@ Package typearea, 2015/05/06 v3.17a KOMA-Script package (type area)
 \ta@vblk=\skip43
 \ta@temp=\skip44
 \footheight=\skip45
+
+Package typearea Warning: DIV for 14.0pt and used papersize
+(typearea)                not defined!
+(typearea)                Using DIV=1.
+
+DIV calculation for typearea with good linewidth.
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 12
+(typearea)             DIV  = 17
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 448.13095pt
-(typearea)              DIV departure   = -6%
-(typearea)              \evensidemargin = 2.4185pt
-(typearea)              \oddsidemargin  = 2.4185pt
+(typearea)              \textwidth      = 492.06537pt
+(typearea)              DIV departure   = 0%
+(typearea)              \evensidemargin = -19.5487pt
+(typearea)              \oddsidemargin  = -19.5487pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 635.5pt
-(typearea)              \topmargin      = -41.72441pt
-(typearea)              \headheight     = 18.125pt
-(typearea)              \headsep        = 21.75pt
-(typearea)              \topskip        = 12.0pt
-(typearea)              \footskip       = 50.75pt
-(typearea)              \baselineskip   = 14.5pt
+(typearea)              \textheight     = 711.0pt
+(typearea)              \topmargin      = -69.31136pt
+(typearea)              \headheight     = 21.25pt
+(typearea)              \headsep        = 25.5pt
+(typearea)              \topskip        = 14.0pt
+(typearea)              \footskip       = 59.5pt
+(typearea)              \baselineskip   = 17.0pt
 (typearea)              on input line 1485.
 )
 \c@part=\count80
@@ -96,27 +102,44 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <29.86> not available
+(Font)              size <24.88> substituted on input line 21.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 21.
+(Font)              <20.74> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 21.
- [1
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--30
+
+ []
+
+[1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.aux) ) 
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.98pt have occurred.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1606 strings out of 493089
- 27723 string characters out of 6134841
- 142542 words of memory out of 5000000
- 5150 multiletter control sequences out of 15000+600000
- 6656 words of font info for 24 fonts, out of 8000000 for 9000
+ 1616 strings out of 493089
+ 27882 string characters out of 6134841
+ 143534 words of memory out of 5000000
+ 5157 multiletter control sequences out of 15000+600000
+ 7876 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,46p,220b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on "/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.pdf" (1 page, 32610 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on "/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.pdf" (1 page, 47706 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 24 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
