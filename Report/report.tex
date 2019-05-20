@@ -27,8 +27,12 @@
 		\newline
 		The purpose is to enter a digit from 1 to 9 (or other symbols e.g. letters, icons) in each cell of the grid so that each row, column and region contains only one instance of each digit.
 		\newline
-		
-		
+		We implemented a \textbf{SAT solver} (Instead of combine backtracking and methods for constraint propagation as other Sudoku solver) to figured out a correct solution for the Sudoku.
+		\newline
+		Basically the Sudoku is translated into a propositional formula that can be satify only if the Sudoku has a solution.
+		\newline
+		Once the propositional formula is formulated, The SAT solver tries to find a satisfying assignment that will become the solution for the original Sudoku.
+			 			
 	\section*{Reduces Sudoku problem to a SAT clause}
 	
 	\section*{SAT Solver}
