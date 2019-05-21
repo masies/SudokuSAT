@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.18)  21 MAY 2019 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.18)  21 MAY 2019 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -114,29 +114,107 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 41.
+(Font)              <7> on input line 39.
+./report.tex:44: Undefined control sequence.
+l.44 		\[ \operatorname
+                       {valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [1
 
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.aux)
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+./report.tex:48: Undefined control sequence.
+l.48 	\[\operatorname
+                     {sudoku}\left(\left\{x_{i j}\right\}_{i, j \in\{1, \ldo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./report.tex:48: Undefined control sequence.
+l.48 ...) \equiv \bigwedge_{i=1}^{9} \operatorname
+                                                  {valid}\left(x_{i 1}, x_{i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./report.tex:50: Undefined control sequence.
+l.50 	\[ \wedge \bigwedge_{j=1}^{9} \operatorname
+                                                 {valid}\left(x_{1 j}, x_{2 ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./report.tex:52: Undefined control sequence.
+l.52 ... \bigwedge_{i, j \in\{1,4\}} \operatorname
+                                                  {valid}\left(x_{i j}, x_{i...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--67
+
+ []
+
+
+./report.tex:68: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 	\[
+        \operatorname{valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}, ...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./report.tex:68: Undefined control sequence.
+l.68 	\[\operatorname
+                     {valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}, ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[2] [3] (/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 4.98pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 1617 strings out of 493089
- 27896 string characters out of 6134841
- 146534 words of memory out of 5000000
- 5158 multiletter control sequences out of 15000+600000
- 7876 words of font info for 28 fonts, out of 8000000 for 9000
+ 1619 strings out of 493089
+ 27919 string characters out of 6134841
+ 145534 words of memory out of 5000000
+ 5159 multiletter control sequences out of 15000+600000
+ 8045 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,46p,370b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on "/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.pdf" (2 pages, 70873 bytes).
+ 41i,7n,46p,382b,221s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "/Users/damianopugliesi/Documents/8 Semestre/Theory of Computation/SudokuSAT/Report/.texpadtmp/report.pdf" (3 pages, 114956 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
