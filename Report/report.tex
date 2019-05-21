@@ -36,10 +36,26 @@
 	\section*{Reduces Sudoku problem to a SAT clause}
 	
 	\section*{SAT Solver}
-	
-	\section*{Conclusion}
-	
-	
+	We're now introducing 9 boolean variables for each cell of the 9x9 grid in order to encode a Sudoku.
+	\newline
+	Each boolean value holds the truth value of the equation x$_{i,j}$ = d. A clause (1st formula under fig.2 goes here) assures that a cell contains one of the nine accepted digits, whilst 36 clauses (2nd formula under fig.2 goes here) assure that a cell doesn't hold two different digits.
+	\newline
+	Since the number of digits is equals to the number of cells in every row, column or region, then the nine grid cells (x$_1$, ..., x$_9$) hold distinct values.
+	\newline
+	Lemma 1 \\
+	(3rd formula under fig.2 goes here)
+	\newline
+The given formula, when converted into SAT, is translated into 9 clauses * 36 inequations = 324 clauses, each of length 2. This allows more unit propagation at the boolean level than what was previously stated in Def. 1 (<-- hai usage def. 1?), which gives us the possibility of cross hatching digits (a technique used in Sudoku to reduce the search space).
+\newline
+Summarising, up to now, our SAT is composed of:
+- 81 definedness clauses of lent 9
+- 81 * 36 uniqueness clauses of length 2
+- 27 * 324 validity clauses of length 2
+For a total of 11745 clauses.
+\newline
+It has to be noticed, though, the we don't need boolean values for cells who's value is already contained in the Sudoku to be solved. Following this, definedness, uniqueness and some validity clauses can be omitted from these cells. Hence the actual number of variables and clauses will be less than 729 and 11745 respectively.
+\newline
+Finally, our encoding produced a propositional formula already in CNF, so the conversion into DIMACS CNF (the input format for most sat solvers) is trivial.
 \end{document}
 
 
