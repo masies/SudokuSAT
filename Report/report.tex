@@ -39,7 +39,7 @@
 	Digits are modelled by a datatype with nine elements $(1, . . , 9)$.
 	\newline
 	We can say that the grid cells $(x1, . . , x9)$ are valid if they contain
-	every digit.
+	at least and at most 1 digit for each.
 	\subsubsection*{Definition 1}
 		\[ \operatorname{valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}, x_{7}, x_{8}, x_{9}\right) \equiv \bigwedge_{d=1}^{9} \bigvee_{i=1}^{9} x_{i}=d \]
 	Labeling the 81 cells, we can check if the cells generate a correct solution for the Sudoku puzzle.
@@ -78,7 +78,7 @@ Summarising, up to now, our \texttt{SAT} is composed of:
 	\end{enumerate}
 For a total of \textbf{11745} clauses.
 \newline
-It has to be noticed, though, the we don't need boolean values for cells who's value is already contained in the Sudoku to be solved. Following this, definedness, uniqueness and some validity clauses can be omitted from these cells. Hence the actual number of variables and clauses will be less than 729 and 11745 respectively.
+Since we know a priori the value of some cells (user input) we can just add those condition to our clause list.
 \newline
 Finally, our encoding produced a propositional formula already in \texttt{CNF}, so the conversion into \texttt{DIMACS CNF} (the input format for most sat solvers) is trivial.
 \end{document}
