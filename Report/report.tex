@@ -2,7 +2,7 @@
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{	
+\title{
 \huge The Sudoku Puzzle \\ % The assignment title
 \horrule{0.5pt} \\[0.5cm] % Thick bottom horizontal rule
 }
@@ -16,43 +16,43 @@
 \date{\normalsize\today} % Today's date or a custom date
 
 \begin{document}
-	
+
 	\maketitle
-	
+
 	\section*{Introduction}
-	
+
 		\textbf{Sudoku} is a placement puzzle, also known as Number Place in the U.S.A.
 		\newline
 		The game consists most frequently of a 9 x 9 grid, divided in 9 subgrids with dimension 3 x 3 called ``regions".
 		\newline
 		The purpose is to enter a digit from 1 to 9 (or other symbols e.g. letters, icons) in each cell of the grid so that each row, column and region contains only one instance of each digit.
 		\newline
-		We implemented a \textbf{SAT solver} (Instead of combine backtracking and methods for constraint propagation as other Sudoku solver) to figured out a correct solution for the Sudoku.
+		We implemented a \textbf{SAT solver} (instead of combining backtracking and methods for constraint propagation as other Sudoku solver) to figure out a correct solution for the Sudoku.
 		\newline
-		Basically the Sudoku is translated into a propositional formula that can be satisfy only if the Sudoku has a solution.
+		Basically the Sudoku is translated into a propositional formula that can be satisfied only if the Sudoku has a solution.
 		\newline
-		Once the propositional formula is formulated, The SAT solver tries to find a satisfying assignment that will become the solution for the original Sudoku.
-			 			
+		Once the propositional formula is generated, the SAT solver tries to find a satisfying assignment that will become the solution for the original Sudoku.
+
 	\section*{Reduces Sudoku problem to a SAT clause}
-	
-	
+
+
 	Digits are modelled by a datatype with nine elements $(1, . . , 9)$.
 	\newline
 	We can say that the grid cells $(x1, . . , x9)$ are valid if they contain
-	at least and at most 1 digit for each.
+	at least and at most 1 digit each.
 	\subsubsection*{Definition 1}
 		\[ \operatorname{valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}, x_{7}, x_{8}, x_{9}\right) \equiv \bigwedge_{d=1}^{9} \bigvee_{i=1}^{9} x_{i}=d \]
 	Labeling the 81 cells, we can check if the cells generate a correct solution for the Sudoku puzzle.
-	
+
 	\subsubsection*{Sudoku definition}
 	\[\operatorname{sudoku}\left(\left\{x_{i j}\right\}_{i, j \in\{1, \ldots, 9\}}\right) \equiv \bigwedge_{i=1}^{9} \operatorname{valid}\left(x_{i 1}, x_{i 2}, x_{i 3}, x_{i 4}, x_{i 5}, x_{i 6}, x_{i 7}, x_{i 8}, x_{i 9}\right)\]
-	
+
 	\[ \wedge \bigwedge_{j=1}^{9} \operatorname{valid}\left(x_{1 j}, x_{2 j}, x_{3 j}, x_{4 j}, x_{5 j}, x_{6 j}, x_{7 j}, x_{8 j}, x_{9 j}\right)\]
-	
+
 	\[ \wedge \bigwedge_{i, j \in\{1,4\}} \operatorname{valid}\left(x_{i j}, x_{i(j+1)}, x_{i(j+2)}, x_{(i+1) j}, x_{(i+1)(j+1)}, x_{(i+1)(j+2),}\right.\]
-	
+
 	\[ x_{(i+2) j}, x_{(i+2)(j+1)}, x_{(i+2)(j+2)} )\]
-	
+
 	\section*{SAT Solver}
 	We're now introducing 9 boolean variables for each cell of the 9x9 grid in order to encode a Sudoku.
 	\newline
@@ -62,7 +62,7 @@
 	\[\bigwedge_{1 \leq d<d^{\prime} \leq 9} \neg p_{i j}^{d} \vee \neg p_{i j}^{d^{\prime}} \]
 	assure that a cell doesn't hold two different digits.
 	\newline
-	Since the number of digits is equals to the number of cells in every row, column or region, then the nine grid cells (x$_1$, ..., x$_9$) hold distinct values.
+	Since the number of digits is equal to the number of cells in every row, column or region, then the nine grid cells (x$_1$, ..., x$_9$) hold distinct values.
 	\newline
 	\subsubsection*{Lemma 1} \\
 	\[\operatorname{valid}\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}, x_{6}, x_{7}, x_{8}, x_{9}\right) \Longleftrightarrow \bigwedge_{1 \leq i<j \leq 9} x_{i} \neq x_{j}\]
@@ -78,9 +78,7 @@ Summarising, up to now, our \texttt{SAT} is composed of:
 	\end{enumerate}
 For a total of \textbf{11745} clauses.
 \newline
-Since we know a priori the value of some cells (user input) we can just add those condition to our clause list.
+Since we know a priori the value of some cells (user input), we can just add these condition to our clause list.
 \newline
-Finally, our encoding produced a propositional formula already in \texttt{CNF}, so the conversion into \texttt{DIMACS CNF} (the input format for most sat solvers) is trivial.
+Finally, our encoding produces a propositional formula already in \texttt{CNF}, so the conversion into \texttt{DIMACS CNF} (the input format for most sat solvers) is trivial.
 \end{document}
-
-
