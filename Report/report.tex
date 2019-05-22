@@ -49,12 +49,12 @@
 
 	\[ \wedge \bigwedge_{j=1}^{9} \operatorname{valid}\left(x_{1 j}, x_{2 j}, x_{3 j}, x_{4 j}, x_{5 j}, x_{6 j}, x_{7 j}, x_{8 j}, x_{9 j}\right)\]
 
-	\[ \wedge \bigwedge_{i, j \in\{1,4\}} \operatorname{valid}\left(x_{i j}, x_{i(j+1)}, x_{i(j+2)}, x_{(i+1) j}, x_{(i+1)(j+1)}, x_{(i+1)(j+2),}\right.\]
+	\[ \wedge \bigwedge_{i, j \in\{1,4,7\}} \operatorname{valid}\left(x_{i j}, x_{i(j+1)}, x_{i(j+2)}, x_{(i+1) j}, x_{(i+1)(j+1)}, x_{(i+1)(j+2),}\right.\]
 
 	\[ x_{(i+2) j}, x_{(i+2)(j+1)}, x_{(i+2)(j+2)} )\]
 
 	\section*{SAT Solver}
-	We're now introducing 9 boolean variables for each cell of the 9x9 grid in order to encode a Sudoku.
+	We're now introducing 9 boolean variables for each cell in the 9x9 grid ($9^3$ = 729 variables in total) in order to encode a Sudoku.
 	\newline
 	Each boolean value holds the truth value of the equation x$_{i,j}$ = d.
 	\newline A clause \[\bigvee_{d=1}^{9} p_{i j}^{d}\] assures that a cell contains one of the nine accepted digits, whilst 36 clauses
