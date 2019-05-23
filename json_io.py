@@ -116,7 +116,6 @@ def solve(grid):
     #sol = set(pycosat.solve(clauses))
     
     
-    # TODO :: here we can call the minisat solver http://minisat.se/
     # basically his format is 
     # p cnf 5 3
     # 1 -5 4 0
